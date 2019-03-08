@@ -1,6 +1,6 @@
 {
   "name": "farol-app-cli",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Farol App CLI",
   "main": "lib/index.js",
   "directories": {
@@ -14,5 +14,6 @@
   },
   "preferGlobal": true,
   "author": "Felipe Plets <felipe.plets@menvia.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {}
 }
