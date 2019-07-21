@@ -1,4 +1,4 @@
-# Farol App CLI
+# Farol CLI
 
 ## Install
 

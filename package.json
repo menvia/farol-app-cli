@@ -1,14 +1,14 @@
 {
   "name": "@farol/cli",
-  "version": "0.0.3",
-  "description": "Farol App CLI",
+  "version": "0.0.4",
+  "description": "Farol CLI",
   "main": "./dist/index.js",
   "scripts": {
     "version": "tsc && git add -A && npm publish --access public",
     "postversion": "git push && git push --tags"
   },
   "bin": {
-    "farol": "./dist/farol-app-cli.js"
+    "farol": "./dist/farol-cli.js"
   },
   "preferGlobal": true,
   "author": "Felipe Plets <felipe.plets@menvia.com>",

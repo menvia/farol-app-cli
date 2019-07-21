@@ -1,3 +1,9 @@
+### 0.0.5 / 21.07.2019
+
+##### Enhancements
+
+- Rename lib from Farol App CLI to Farol CLI
+
 ### 0.0.4 / 21.07.2019
 
 ##### Enhancements
