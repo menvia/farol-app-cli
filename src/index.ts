@@ -3,7 +3,7 @@ import webProcessor from './web-processor';
 
 const farolConfigFilePath = 'farol.json';
 
-exports.run = async args => {
+export const run = async args => {
   if (!fs.existsSync(farolConfigFilePath)) {
     console.log('No farol.json file detected.');
   } else {
@@ -41,9 +41,9 @@ exports.run = async args => {
     }
   }
 };
-exports.init = () => {
+export const init = () => {
   console.log('Coming soon!');
 };
-exports.notSupported = () => {
+export const notSupported = () => {
   console.log('Feature not supported!');
 };

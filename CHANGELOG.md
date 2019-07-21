@@ -1,3 +1,9 @@
+### 0.0.6 / 21.07.2019
+
+##### Enhancements
+
+- Fixes on TypeScript file structure
+
 ### 0.0.5 / 21.07.2019
 
 ##### Enhancements
