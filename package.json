@@ -1,6 +1,6 @@
 {
   "name": "@farol/cli",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Farol App CLI",
   "main": "./dist/index.js",
   "scripts": {
@@ -13,7 +13,7 @@
   "preferGlobal": true,
   "author": "Felipe Plets <felipe.plets@menvia.com>",
   "license": "ISC",
-  "dependencies": {
+  "devDependencies": {
     "@types/node": "^12.6.8",
     "typescript": "^3.5.3"
   }

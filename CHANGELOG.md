@@ -1,3 +1,9 @@
+### 0.0.4 / 21.07.2019
+
+##### Enhancements
+
+- Fix lib publishing process
+
 ### 0.0.3 / 21.07.2019
 
 ##### Enhancements
