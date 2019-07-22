@@ -1,7 +1,9 @@
 #!/usr/bin/env node
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var myLibrary = require("./index.js");
 // Delete the 0 and 1 argument (node and script.js)
 var args = process.argv.splice(process.execArgv.length + 2);
-var myLibrary = require('../lib/index.js');
 var availableCommands = [
     'build',
     'checkout',

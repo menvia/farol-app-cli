@@ -1,8 +1,14 @@
+### 0.0.7 / 21.07.2019
+
+##### Enhancements
+
+- Fix repository URL
+
 ### 0.0.6 / 21.07.2019
 
 ##### Enhancements
 
-- Fixes on TypeScript file structure
+- Fix TypeScript file structure
 
 ### 0.0.5 / 21.07.2019
 
