@@ -7,10 +7,13 @@ export const run = async args => {
   if (!fs.existsSync(farolConfigFilePath)) {
     console.log('No farol.json file detected.');
   } else {
-    const farolConfig = JSON.parse(fs.readFileSync('farol.json', 'utf8'));
+    const farolConfig = JSON.parse(
+      fs.readFileSync(farolConfigFilePath, 'utf8')
+    );
     if (farolConfig.platform === 'web') {
       webProcessor(args[0], args[1], farolConfig);
     } else {
+      farolConfig.project = args[1];
       const { spawn } = require('child_process');
       const command = 'bundle';
       args[1] = `project:${args[1]}`;
@@ -37,8 +40,20 @@ export const run = async args => {
         if (code !== 0) {
           console.log(`child process exited with code ${code}`);
         }
+        fs.writeFileSync(farolConfigFilePath, JSON.stringify(farolConfig));
       });
     }
+  }
+};
+
+export const project = () => {
+  if (!fs.existsSync(farolConfigFilePath)) {
+    console.log('No farol.json file detected.');
+  } else {
+    const farolConfig = JSON.parse(
+      fs.readFileSync(farolConfigFilePath, 'utf8')
+    );
+    console.log(farolConfig.project);
   }
 };
 export const init = () => {

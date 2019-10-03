@@ -18,7 +18,10 @@
   "author": "Felipe Plets <felipe.plets@menvia.com>",
   "license": "ISC",
   "devDependencies": {
-    "@types/node": "^12.6.8",
-    "typescript": "^3.5.3"
+    "@types/node": "^12.7.9",
+    "typescript": "^3.6.3"
+  },
+  "dependencies": {
+    "@farol/sdk": "^1.17.10"
   }
 }

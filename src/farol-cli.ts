@@ -6,6 +6,7 @@ import * as myLibrary from './index.js';
 const args = process.argv.splice(process.execArgv.length + 2);
 
 const availableCommands = [
+  'project',
   'build',
   'checkout',
   'create',
@@ -18,6 +19,8 @@ const availableCommands = [
 
 if (args[0] === 'init') {
   myLibrary.init();
+} else if (args[0] === 'project') {
+  myLibrary.project();
 } else if (availableCommands.includes(args[0])) {
   myLibrary.run(args);
 } else {

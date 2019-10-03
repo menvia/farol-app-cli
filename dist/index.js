@@ -1,9 +1,10 @@
 "use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
         function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
@@ -34,23 +35,23 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 var fs = require("fs");
 var web_processor_1 = require("./web-processor");
 var farolConfigFilePath = 'farol.json';
-exports.run = function (args) { return __awaiter(_this, void 0, void 0, function () {
-    var farolConfig, spawn, command, possibleNakedArguments_1, params, child;
+exports.run = function (args) { return __awaiter(void 0, void 0, void 0, function () {
+    var farolConfig_1, spawn, command, possibleNakedArguments_1, params, child;
     return __generator(this, function (_a) {
         if (!fs.existsSync(farolConfigFilePath)) {
             console.log('No farol.json file detected.');
         }
         else {
-            farolConfig = JSON.parse(fs.readFileSync('farol.json', 'utf8'));
-            if (farolConfig.platform === 'web') {
-                web_processor_1.default(args[0], args[1], farolConfig);
+            farolConfig_1 = JSON.parse(fs.readFileSync(farolConfigFilePath, 'utf8'));
+            if (farolConfig_1.platform === 'web') {
+                web_processor_1.default(args[0], args[1], farolConfig_1);
             }
             else {
+                farolConfig_1.project = args[1];
                 spawn = require('child_process').spawn;
                 command = 'bundle';
                 args[1] = "project:" + args[1];
@@ -70,12 +71,22 @@ exports.run = function (args) { return __awaiter(_this, void 0, void 0, function
                     if (code !== 0) {
                         console.log("child process exited with code " + code);
                     }
+                    fs.writeFileSync(farolConfigFilePath, JSON.stringify(farolConfig_1));
                 });
             }
         }
         return [2 /*return*/];
     });
 }); };
+exports.project = function () {
+    if (!fs.existsSync(farolConfigFilePath)) {
+        console.log('No farol.json file detected.');
+    }
+    else {
+        var farolConfig = JSON.parse(fs.readFileSync(farolConfigFilePath, 'utf8'));
+        console.log(farolConfig.project);
+    }
+};
 exports.init = function () {
     console.log('Coming soon!');
 };
