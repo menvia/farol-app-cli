@@ -1,6 +1,6 @@
 {
   "name": "@farol/cli",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Farol CLI",
   "main": "./dist/index.js",
   "scripts": {
